@@ -4,7 +4,7 @@ const Home = () => {
  
   //   const [login, setlogin] = useState(10);
   const login = 2;
-
+// hello krishna
   const [data, setData] = useState(null);
   const [print, setPrint] = useState(false);
   const getData = (val) => {
