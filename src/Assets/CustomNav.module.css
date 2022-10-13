@@ -1,0 +1,9 @@
+.active
+{
+    text-decoration: none;
+    color: red !important ;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color:red;
+  }
