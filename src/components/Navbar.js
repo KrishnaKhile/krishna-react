@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, {useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation,useNavigate } from 'react-router-dom';
 import '../index.css';
 
 
@@ -12,50 +12,50 @@ const NavBar = () => {
     //         fontweight:isActive ? 'bold':'normal',
     //         // textDecoration:isActive ? 'none':'undeline',
     //     }
-//     const [acKey, setKey] = useState(window.localStorage.getItem('TUTORIAL'));
-// // console.log(acKey)
-//     useEffect(()=>{
-//         const data = window.localStorage.getItem('TUTORIAL');
-//         console.log((data));
-//         setKey(data);
-//     },[])
-//     useEffect(()=>{
-//         // console.log(acKey)
-//         window.localStorage.setItem('TUTORIAL',JSON.parse(acKey))
-//     },[acKey])
+    // const [acKey, setKey] = useState(window.localStorage.getItem('TUTORIAL'));
+// console.log(acKey)
+    // useEffect(()=>{
+    //     const data = window.localStorage.getItem('TUTORIAL');
+    //     console.log((data));
+    //     setKey(data);
+    // },[])
+    // useEffect(()=>{
+    //     // console.log(acKey)
+    //     window.localStorage.setItem('TUTORIAL',JSON.parse(acKey))
+    // },[acKey])
+  // }
 
 
 
-
-// const [logout,setLogout] = useState();
-// const navigate = useNavigate();
-
-// useEffect(()=>{
-//   const data = window.localStorage.getItem('login');
-//   console.log(data)
-//   if( data != null) {
-//     setLogout(JSON.stringify(data))
-//      navigate('/login')
-//   }
-// },[])
-// useEffect(()=>{
-//   console.log(logout);
-// window.localStorage.setItem('login',JSON.stringify(logout))
-// },[logout])
-
-// useEffect(()=>{
-//   if(logout === false){
-//   let login = localStorage.getItem('login',false);
-//   if(!login){
-//       navigate('/login');
-//   }
-// }
-// })
-const location = useLocation();
+const [logout,setLogout] = useState();
+const navigate = useNavigate();
 
 useEffect(()=>{
-    // console.log(location)
-},[location])
+  const data = window.localStorage.getItem('login');
+  console.log(data)
+  if( data != null) {
+    setLogout(JSON.stringify(data))
+     navigate('/login')
+  }
+},[])
+useEffect(()=>{
+  console.log(logout);
+window.localStorage.setItem('login',JSON.stringify(logout))
+},[logout])
+
+useEffect(()=>{
+  if(logout === false){
+  let login = localStorage.getItem('login',false);
+  if(!login){
+      navigate('/login');
+  }
+}
+})
+const location = useLocation();
+
+// useEffect(()=>{
+//     // console.log(location)
+// },[location])
 
   return (
     <>
@@ -66,9 +66,9 @@ useEffect(()=>{
             <Nav.Item as="li">
             <Nav.Link className={location.pathname==="/"? "active":""} as={Link} to="/">Home</Nav.Link>
             </Nav.Item>
-            {/* <Nav.Item as="li">
+            <Nav.Item as="li">
             <Nav.Link className={location.pathname==="/login"? "active":""} as={Link} to="/login">Login</Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item>
             <Nav.Item as="li">
             <Nav.Link className={location.pathname==="/submitparams"? "active":""} as={Link} to="/submitparams">Params</Nav.Link>
             </Nav.Item>
@@ -78,9 +78,9 @@ useEffect(()=>{
             <Nav.Item as="li">
             <Nav.Link className={location.pathname==="/StateObjectWithHooks"? "active":""} as={Link} to="/StateObjectWithHooks">State object with hook </Nav.Link>
             </Nav.Item>
-            {/* <Nav.Item as="li">
+            <Nav.Item as="li">
             <Nav.Link onClick={()=>setLogout(false)}>LogOut</Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item>
           </Nav>
         </Container>
       </Navbar>

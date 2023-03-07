@@ -4,7 +4,7 @@ import { Table } from "react-bootstrap";
 const Bootable = () => {
   const arr = [
     {
-      name: "krushna",
+      name: "krushna khile",
       add: "kanadi bk",
       contact: 42241545454,
     },
