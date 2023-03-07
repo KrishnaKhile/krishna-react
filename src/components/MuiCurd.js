@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import axios from "axios";
 
+
 const MuiCurd = () => {
 const [cname,setCname] = useState("");
 const [scode,setScode] = useState("");
@@ -63,32 +64,32 @@ const saveNor = async (e) => {
     >
     <div className="row col-lg-12" style={{width:"50%"}}>
           <div className="col-lg-8 col-md-4 label ">Consignor  Name</div>
-          <div className="col-lg-4 col-md-8"><TextField id="standard-basic" value={cname} onChange={(e)=>setCname(e.target.value)} label="Consignor Name" variant="standard" /></div>
+          <div className="col-lg-4 col-md-8"><TextField id="standard-basic" name='cname' value={cname} onChange={(e)=>setCname(e.target.value)} label="Consignor Name" variant="standard" /></div>
         </div>
 
         <div className="row col-lg-12" style={{width:"50%"}}>
           <div className="col-lg-8 col-md-4 label">Short Code</div>
           <div className="col-lg-4 col-md-8">
-          <TextField id="standard-basic" value={scode} onChange={(e)=>setScode(e.target.value)} label="Short Code" variant="standard" />
+          <TextField id="standard-basic" name='scode' value={scode} onChange={(e)=>setScode(e.target.value)} label="Short Code" variant="standard" />
           </div>
         </div>
 
         <div className="row col-lg-12" style={{width:"50%"}}>
           <div className="col-lg-8 col-md-4 label">Email</div>
-          <div className="col-lg-4 col-md-8"><TextField id="standard-basic" value={email} onChange={(e)=>setEmail(e.target.value)} label="Email" variant="standard" /></div>
+          <div className="col-lg-4 col-md-8"><TextField id="standard-basic" name='email' value={email} onChange={(e)=>setEmail(e.target.value)} label="Email" variant="standard" /></div>
         </div>
 
         <div className="row col-lg-12" style={{width:"50%"}}>
           <div className="col-lg-8 col-md-4 label">Mobile</div>
-          <div className="col-lg-4 col-md-8"><TextField id="standard-basic" value={mobile} onChange={(e)=>setmobile(e.target.value)} label="Mobile" variant="standard" /></div>
+          <div className="col-lg-4 col-md-8"><TextField id="standard-basic" name='mobile' value={mobile} onChange={(e)=>setmobile(e.target.value)} label="Mobile" variant="standard" /></div>
         </div>
 
-        <div className="row col-lg-12" style={{width:"50%"}}>
+        {/* <div className="row col-lg-12" style={{width:"50%"}}>
           <div className="col-lg-8 col-md-4 label">City</div>
           <div className="col-lg-4 col-md-8">
           <TextField id="standard-basic" label="City" value={city} onChange={(e)=>setCity(e.target.value)} variant="standard" />
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="row col-lg-12" style={{width:"50%"}}>
           <div className="col-lg-8 col-md-4 label">PINCode</div>
